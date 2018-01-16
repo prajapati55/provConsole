@@ -1,0 +1,148 @@
+<mat-card class="title card">
+    <mat-card-title>
+        <strong>Add Rules</strong>
+        <button mat-button style="background-color: #BB062F; color:white; float: right; border-radius: 25px;" (click)="openDialog()">Add New Rules</button>
+    </mat-card-title>
+    
+</mat-card>
+<div style="width:100%;">
+    <div style="float:left; width:50%;">
+        <!-- <mat-selection-list #shoes>
+            <mat-list-option *ngFor="let shoe of typesOfShoes">
+                {{shoe}}
+                
+                
+            </mat-list-option>
+        </mat-selection-list> -->
+        <table>
+            <tr>
+              <th>Rule name</th>
+              <th>Access ID</th>
+              <th>Action</th>              
+            </tr>
+            <tr>
+              <td>General Rule 1</td>
+              <td>ZY1cD9L47</td>
+              <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>Blind Disability 3</td>
+              <td>9Cv927Zyk</td>
+              <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>Enable Apple.com</td>
+              <td>bZZ90L34m</td>
+              <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td><input type="checkbox"></td>
+            </tr>
+          </table>
+    </div>
+    <div style="float:right; width:50%; ">
+        <mat-tab-group>
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <em>
+              <strong>Websites</strong>
+            </em>
+                </ng-template>
+                <div style="margin:20px;">
+                    <br>
+                    <strong class="spacer">Allow Ports</strong>
+                    <br>
+                    <br>
+                    <br>
+                    <mat-slide-toggle>Allow!</mat-slide-toggle>
+                    
+                    <input class="spacerinput" type="number" placeholder="Enter port number"/>
+                    <br>
+                    <br>
+                    <textarea matInput class="spacerinput1"></textarea>
+                    <br>
+                    <br>
+                    <br>
+                    <strong class="spacer">Allow Websites</strong>
+                    <br>
+                    <br>
+                    <br>
+                    <mat-slide-toggle>Allow!</mat-slide-toggle>
+                    
+                    <input class="spacerinput" type="text" placeholder="Enter website name"/>
+                    <br>
+                    <br>
+                    <textarea matInput class="spacerinput1"></textarea>
+                </div>
+            </mat-tab>
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <em>
+                              <strong>Applications</strong>
+                            </em>
+                </ng-template>
+                <div style="margin:20px;">
+                    <br>
+                    <strong class="spacer">Allow Applications</strong>
+                    <br>
+                    <br>
+                    <br>
+                    <mat-slide-toggle>Allow!</mat-slide-toggle>
+                    
+                    <input class="spacerinput" type="text" placeholder="Enter Application name"/>
+                    <br>
+                    <br>
+                    <textarea matInput class="spacerinput1"></textarea>
+                </div>
+            </mat-tab>
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <em>
+                                      <strong>Controls</strong>
+                                    </em>
+                </ng-template>
+                <br><br>
+                Allow! Restrict!
+                <br><br>
+                <mat-slide-toggle class="togglespacer"></mat-slide-toggle>
+                <input class="spacerinput" />
+                <br><br>
+                <mat-slide-toggle class="togglespacer"></mat-slide-toggle>
+                <input class="spacerinput" />
+                <br><br>
+                <mat-slide-toggle class="togglespacer"></mat-slide-toggle>
+                <input class="spacerinput" />
+                <br><br>
+                <mat-slide-toggle class="togglespacer"></mat-slide-toggle>
+                <input class="spacerinput" />
+                <br><br>
+                <mat-slide-toggle class="togglespacer"></mat-slide-toggle>
+                <input class="spacerinput" />
+                <br><br>
+                <mat-slide-toggle class="togglespacer"></mat-slide-toggle>
+                <input class="spacerinput" />
+                <br><br>
+                <mat-slide-toggle class="togglespacer"></mat-slide-toggle>
+                <input class="spacerinput" />
+                <br><br>
+                <mat-slide-toggle class="togglespacer"></mat-slide-toggle>
+                <input class="spacerinput" />
+                <br><br>
+
+                
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>

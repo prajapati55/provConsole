@@ -1,0 +1,75 @@
+.detailform{
+    margin-top: 20px !important;
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+
+}
+.example-container {
+margin-left: 15px;
+margin-right: 15px;
+  display: block;
+}
+
+.example-header {
+  min-height: 64px;
+  padding: 8px 24px 0;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+.mybutton{
+    float: right;
+    background-color: #ffffff;
+    color: #BB062F;
+    border-radius: 45%;
+}
+.mat-cell, .mat-header-cell {
+    flex: 1;
+    font-size: 12px !important;
+    overflow: visible !important;
+    word-wrap: break-word;
+}
+.bgclr{
+  background-color: #f9f9f9;
+}
+.card {
+  transition: box-shadow 280ms cubic-bezier(.4,0,.2,1);
+  display: block;
+  position: relative;
+  padding: 15px !important;
+  border-radius: 2px;
+}
+
+.title{
+  background-color: #f9f9f9;
+  color: grey;
+}
+.spacer{
+  margin-left: 20px;
+}
+.spacerinput{
+  margin-left: 100px;
+}
+.spacerinput1{
+  margin-left: 190px;
+}
+.togglespacer{
+  margin-left: 35px;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}

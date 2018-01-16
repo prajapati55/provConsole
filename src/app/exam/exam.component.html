@@ -1,0 +1,130 @@
+<mat-card class="title card">
+        <mat-card-title>
+            <strong>Add Exam</strong>
+
+                <button style="float: right;" mat-raised-button>Save</button>
+        </mat-card-title>
+    </mat-card>
+<mat-card class="detailform">
+    <mat-card-content>
+        <div class="example-container">
+            <mat-form-field>
+                <input matInput placeholder="Company Id">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Exam Name">
+            </mat-form-field>
+            <mat-form-field>
+                <textarea matInput placeholder="Description"></textarea>
+            </mat-form-field>
+            <!-- <div class="row">
+                <button mat-raised-button>Save</button>
+                </div> -->
+        </div>
+
+    </mat-card-content>
+</mat-card>
+<div style="margin-top:40px;"></div>
+<div style="width:100%;">
+    <div style="float:left; width:48%; margin:10px;">
+        <mat-card class="permit">
+            <mat-card-title>
+                <strong>Add Permissions</strong>
+            </mat-card-title>
+            <mat-card-content>
+                <mat-table #table [dataSource]="dataSource">
+                    
+                        <!-- Position Column -->
+                        <ng-container matColumnDef="position">
+                          <mat-header-cell *matHeaderCellDef>  </mat-header-cell>
+                          <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+                        </ng-container>
+                    
+                        <!-- Name Column -->
+                        <ng-container matColumnDef="name">
+                          <mat-header-cell *matHeaderCellDef> Key Stroke </mat-header-cell>
+                          <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+                        </ng-container>
+                    
+                        <!-- Weight Column -->
+                        <ng-container matColumnDef="weight">
+                          <mat-header-cell *matHeaderCellDef> Enable/disable </mat-header-cell>
+                          <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+                        </ng-container>
+                    
+                        <!-- Symbol Column -->
+                        <ng-container matColumnDef="symbol">
+                          <mat-header-cell *matHeaderCellDef> Count </mat-header-cell>
+                          <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+                        </ng-container>
+                  
+                          <!-- Symbol Column
+                          <ng-container matColumnDef="exam">
+                              <mat-header-cell *matHeaderCellDef> Exam Name </mat-header-cell>
+                              <mat-cell *matCellDef="let element"> {{element.exam}} </mat-cell>
+                            </ng-container>
+                  
+                  
+                                Symbol Column
+                                <ng-container matColumnDef="lastinvoicedate">
+                                    <mat-header-cell *matHeaderCellDef> Last Invoice Date </mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.lastinvoicedate}} </mat-cell>
+                                  </ng-container>
+                                          Symbol Column
+                          <ng-container matColumnDef="action">
+                              <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+                              <mat-cell *matCellDef="let element"> {{element.action}} </mat-cell>
+                            </ng-container> -->
+                        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                      </mat-table>
+                  
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div style="float:right; width:48%; margin:10px;">
+        <mat-card class="permitone">
+            <mat-card-title>
+                <strong>Billing</strong>
+            </mat-card-title>
+            <mat-card-content>
+                <div class="example-container">
+                    <mat-form-field>
+                        <mat-select placeholder="Choose Billing Cycle">
+                          <mat-option>None</mat-option>
+                          <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                      <mat-form-field>
+                        <mat-select placeholder="Choose Bulk Discount">
+                          <mat-option>None</mat-option>
+                          <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                      <mat-form-field>
+                            <mat-select placeholder="Choose Subscription">
+                              <mat-option>None</mat-option>
+                              <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                          <mat-form-field>
+                                <mat-select placeholder="">
+                                  <mat-option>None</mat-option>
+                                  <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                      <!-- <mat-form-field>
+                        <textarea matInput placeholder="Description"></textarea>
+                    </mat-form-field> -->
+                    <!-- <div class="row">
+                        <button mat-raised-button>Save</button>
+                    </div> -->
+                </div>
+
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+
+</div>
+

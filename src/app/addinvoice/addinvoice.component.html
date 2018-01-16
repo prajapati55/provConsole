@@ -1,0 +1,39 @@
+<mat-card class="title card">
+  <mat-card-title>
+      <strong>Add New Invoice</strong>
+  </mat-card-title>
+</mat-card>
+<mat-card class="detailform">
+  <mat-card-content>
+      <div class="example-container">
+          <mat-form-field>
+              <input matInput placeholder="Client Name">
+          </mat-form-field>
+          <mat-form-field>
+              <input matInput placeholder="Access Code">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Amount">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="date" placeholder="Invoice Date">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="date" placeholder="Last Payment Date">
+          </mat-form-field>
+          <!-- <mat-form-field class="example-full-width">
+            <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker touchUi="true" #picker></mat-datepicker>
+          </mat-form-field>
+           -->
+          <!-- <mat-form-field>
+              <textarea matInput placeholder="Prefix (For access code)"></textarea>
+          </mat-form-field> -->
+          <div class="row">
+              <button mat-raised-button>Save</button>
+              </div>
+      </div>
+
+  </mat-card-content>
+</mat-card>

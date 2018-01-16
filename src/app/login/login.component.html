@@ -1,0 +1,18 @@
+<mat-card class="detailform">
+        <mat-card-title>
+            <strong>Login</strong>
+        </mat-card-title>
+        <mat-card-content>
+            <div class="example-container">
+                <mat-form-field>
+                    <input matInput placeholder="Email" name="email" [(ngModel)]="userData.email">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Password" type="password" name="password" [(ngModel)]="userData.password">
+                </mat-form-field>
+                <div class="row">
+                    <button mat-raised-button (click)="submit()">Login</button>
+                </div>
+            </div>
+        </mat-card-content>
+</mat-card>

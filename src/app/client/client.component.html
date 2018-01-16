@@ -1,0 +1,70 @@
+<mat-card class="bgclr">
+<div class="example-container">
+    <div class="example-header">
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+      </mat-form-field>
+      <div class="row" [hidden]="myVar">
+        
+      <button mat-button class="mybutton" (click)="newclient()">Add New Client</button>
+    </div>
+    </div>
+    <div class="row">
+      Search results
+    </div>
+    </div>
+    </mat-card>
+  <div>
+
+    <mat-card class="detailform">
+
+    <mat-table #table [dataSource]="dataSource">
+  
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <mat-header-cell *matHeaderCellDef>  </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Client Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      </ng-container>
+  
+      <!-- Weight Column -->
+      <ng-container matColumnDef="weight">
+        <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+      </ng-container>
+  
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="symbol">
+        <mat-header-cell *matHeaderCellDef> Prefix </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+      </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="exam">
+            <mat-header-cell *matHeaderCellDef> Exam Name </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.exam}} </mat-cell>
+          </ng-container>
+
+
+              <!-- Symbol Column -->
+              <ng-container matColumnDef="lastinvoicedate">
+                  <mat-header-cell *matHeaderCellDef> Last Invoice Date </mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{element.lastinvoicedate}} </mat-cell>
+                </ng-container>
+                        <!-- Symbol Column -->
+        <ng-container matColumnDef="action">
+            <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+            <mat-cell *matCellDef="let element"> <button mat-raised-button style="background-color: #BB062F; color:white;">View</button> </mat-cell>
+          </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </mat-card>
+  
+  </div>
+  
