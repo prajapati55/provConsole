@@ -1,4 +1,4 @@
-<mat-toolbar style="background-color: #22354B; color:#fff;">
+<mat-toolbar style="background-color: #22354B; color:#fff;" *ngIf="isLoggedIn$ | async">
     <mat-icon md-button (click)="sidenav.toggle()">menu</mat-icon>
     <span class="toolbar-spacer"><b>Prov Lock</b></span>
     
@@ -27,7 +27,7 @@
             <a mat-list-item href="/#/invoice">
                 <mat-icon small>library_books</mat-icon>&nbsp;&nbsp;&nbsp;Invoices
             </a>
-            <a mat-list-item href="/#/">
+            <a mat-list-item href="/#/logout"  (click)="sidenav.toggle()">
                 <mat-icon small>exit_to_app</mat-icon>&nbsp;&nbsp;&nbsp;Logout
             </a>
         </mat-nav-list>
