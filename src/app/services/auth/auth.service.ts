@@ -29,28 +29,23 @@ export class AuthService {
             this.requestSer.login(user)
                 .subscribe(
                 (response) => {
-                    this.userData.username = response.username;
-                    this.userData.usertype = (response.usertype) ? 'client' : 'admin';
-                    this.userData.hide = 'true';
-                    localStorage.setItem('users', JSON.stringify(this.userData));
-                    this.loggedIn.next(true);
-                    this.router.navigate(["home"]);
+                    if (response.errorMessage) {
+                        this.loggedIn.next(false);
+                        this.router.navigate(["login"]);
+                    } else {
+                        this.userData.username = response.username;
+                        this.userData.usertype = (response.usertype) ? 'client' : 'admin';
+                        this.userData.hide = 'true';
+                        localStorage.setItem('users', JSON.stringify(this.userData));
+                        this.loggedIn.next(true);
+                        this.router.navigate(["home"]);
+                    }
                 },
-                (error) => console.log('error', error)
-                );
-            // if (user.userName == "admin" && user.password == "admin") {
-            //     this.userData.usertype = 'admin';
-            //     this.userData.username = 'Vinod J';
-            //     this.userData.hide = true;
-
-            // }
-            // else if (user.userName == "client" && user.password == "password") {
-            //     this.userData.usertype = 'client';
-            //     this.userData.username = 'Stanford';
-            //     this.userData.hide = true;              
-
-            // }
-            // localStorage.setItem('users', JSON.stringify(this.userData));                       
+                (error) => {
+                    console.log('error', error);
+                    this.loggedIn.next(false);
+                    this.router.navigate(["login"])
+                });                     
 
         }
 
@@ -58,7 +53,7 @@ export class AuthService {
 
     logout() {
         this.loggedIn.next(false);
-        localStorage.setItem('users', null);
+        localStorage.setItem('users', '');
         this.router.navigate(['/login']);
     }
 }

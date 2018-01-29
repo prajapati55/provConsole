@@ -16,12 +16,12 @@ hide:boolean;
 isLoggedIn$: Observable<boolean> | Promise<boolean> | boolean;
   title = 'app';
   constructor(public router: Router,private authService: AuthService) {
-    if (localStorage.getItem('users') != null && JSON.parse(localStorage.getItem('users')) !== null) {
-      var data = JSON.parse(localStorage.getItem('users'));
-      this.dd = data.username;
-      this.user = data.usertype;
-      this.hide = data.hide;
-    }
+    // if (localStorage.getItem('users') !='' && localStorage.getItem('users') != null && JSON.parse(localStorage.getItem('users')) !== null) {
+    //   var data = JSON.parse(localStorage.getItem('users'));
+    //   this.dd = data.username;
+    //   this.user = data.usertype;
+    //   this.hide = data.hide;
+    // }
 
 
     // if(this.IsLoggedIn){
@@ -34,6 +34,16 @@ isLoggedIn$: Observable<boolean> | Promise<boolean> | boolean;
   }
   ngOnInit() {
     this.isLoggedIn$ = this.authService.isLoggedIn; // {2}
+    this.isLoggedIn$.subscribe((logged: boolean) => {
+      if (logged) {
+        if (localStorage.getItem('users') != '' && localStorage.getItem('users') != null && JSON.parse(localStorage.getItem('users')) !== null) {
+          var data = JSON.parse(localStorage.getItem('users'));
+          this.dd = data.username;
+          this.user = data.usertype;
+          this.hide = data.hide;
+        }
+      }
+    });
   }
   onLogout(){
     this.authService.logout();                      // {3}
